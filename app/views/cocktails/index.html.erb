@@ -1,0 +1,9 @@
+<div class="card-container">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card">
+      <%= cocktail.name %>
+      <%= link_to 'Show', cocktail, class: "green" %>
+    </div>
+  <% end %>
+</div>
+  <%= link_to 'Add Cocktail', new_cocktail_path, class: "btn btn-outline-success" %>
