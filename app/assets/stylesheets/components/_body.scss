@@ -1,0 +1,30 @@
+body {
+  background: rgb(20,20,20);
+  //<%= image_tag "avatar_placeholder.jpg"
+  .background-image-container {
+    height: 700px;
+    background-position: top;
+    background-image:
+    linear-gradient(to bottom, rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)),
+    url("https://res.cloudinary.com/caitlinsnyder/image/upload/v1565984075/marble_bo2h8z.jpg");
+    background-size: cover;
+    margin: -70px 0 0 0;
+    padding: 70px 70px 150px 70px;
+    background-color: rgb(20,20,20);
+  }
+  .main-container {
+    border: black, 10px, solid;
+    height: 550px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 110px 30px 30px 60px;
+    background-image: url("https://res.cloudinary.com/caitlinsnyder/image/upload/v1565983991/whiskey_w5elxz.jpg");
+    background-size: cover;
+  }
+  h1 {
+    color: #F6B733;
+    text-shadow: 1px 2px 4px rgba(232, 230, 199, 0.5);
+    font-family: 'Aguafina Script', cursive;
+    font-size:180px;
+  }
+}

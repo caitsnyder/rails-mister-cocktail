@@ -1,22 +1,30 @@
 <h1><%= @cocktail.name %></h1>
 <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<% if @cocktail.photo.present? %>
+      <div
+        style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+    <% else %>
+      <div>
+    <% end %>
+        Make this cocktail:
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li>
+              <%= dose.description %>
+              <%= dose.ingredient.name %>
+              <%= link_to 'Edit', edit_dose_path(@cocktail, dose.id), class: "green" %>
+              <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: "green" %>
+            </li>
+          <% end %>
+        </ul>
 
-Make this cocktail:
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= dose.description %>
-      <%= link_to 'Edit', edit_cocktail_dose_path(@cocktail, dose.id), class: "green" %>
-      <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: "green" %>
-    </li>
-  <% end %>
-</ul>
+        Add a new dose:
+        <%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: "green" %>
 
-Add a new dose:
-<%= link_to 'Add dose', new_cocktail_dose_path(@cocktail), class: "green" %>
+        <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: "green" %>
 
-<%= link_to 'Edit', edit_cocktail_path(@cocktail), class: "green" %>
-
-<%= link_to 'Delete cocktail', @cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: "green" %>
+        <%= link_to 'Delete cocktail', @cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: "green" %>
+    </div>
 
 <%= link_to 'All cocktails', root_path, class: "green" %>

@@ -13,7 +13,18 @@
   </head>
 
   <body>
+    <div class="navbar-cocktails">
+      <div></div>
+      <div class="add_link">
+        <%= link_to new_cocktail_path do %>
+          <i class="fas fa-plus"></i>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
+
+
+
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
 

@@ -1,0 +1,47 @@
+.cocktails-flex {
+  display: flex;
+  flex-direction: column;
+  margin: -230px 0px 0px 0px;
+  height: 350px;
+  opacity: 1;
+}
+
+.cocktails-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+  background: transparent;
+  justify-content: center;
+  width: 900px;
+  margin: 0px auto;
+}
+
+.cocktail-card {
+  background-color: white;
+  border: 2px, $border-gray, solid;
+  box-shadow: 2px 4px 4px rgba(30,30,30,.8);
+  border-radius: 2px;
+  height: 300px;
+  width: 280px;
+
+  p {
+    font-size: 10px;
+  }
+}
+
+.cocktail-name {
+  padding-top: 10px;
+  text-align: center;
+
+}
+
+.cocktail-name a {
+  font-size: 15px;
+  align:items;
+  font-weight: bold;
+  color: rgb(20,20,20);
+
+  &:active {
+    color: #F6B733;
+  }
+}
