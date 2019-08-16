@@ -17,7 +17,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
 
      if @cocktail.save
-       redirect_to cocktail_path(@cocktail)
+       redirect_to root_path(@cocktail)
     else
       render :new
     end
@@ -30,7 +30,7 @@ class CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
     if @cocktail.update(cocktail_params)
-      redirect_to cocktail_path(@cocktail)
+      redirect_to root_path(@cocktail)
     else
       render :edit
     end
